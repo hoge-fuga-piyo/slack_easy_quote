@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'development',
   module: {
     rules: [
       {
@@ -12,7 +13,8 @@ module.exports = {
   },
   entry: {
     options: './src/js/options.js',
-    contents: './src/js/contents.js'
+    contents: './src/js/contents.js',
+    backgrounds: './src/js/backgrounds.js'
   },
   output: {
     filename: '[name].js',

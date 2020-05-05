@@ -1,9 +1,19 @@
 {
-  "name": "Chrome Extension React Template",
-  "description" : "Chrome Extension React Template Description",
+  "name": "Slack Easy Quote",
+  "description" : "Slack Easy Quote",
   "version": "1.0",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "src/options.html"
-  }
+  },
+  "background": {
+    "scripts": [
+      "src/backgrounds.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "https://app.slack.com/*"
+  ]
 }
