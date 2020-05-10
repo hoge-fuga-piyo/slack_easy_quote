@@ -12,20 +12,16 @@ const QuoteButton = () => {
 }
 
 function exitQuoteButton(element) {
-  return element.firstElementChild.classList.contains('hasQuoteButton')) {
+  return element.firstElementChild.classList.contains('hasQuoteButton');
 }
 
 function addQuoteButtons() {
   let messages = document.getElementsByClassName('c-message_kit__hover');
-  console.log('messagenum: ' + messages.length);
 
   for(let i = 0; i < messages.length; i++) {
     // 既にmouse overイベントが登録されている場合は何もしない
     if (exitQuoteButton(messages[i])) {
-      console.log('hasquotebutton');
       continue;
-    } else {
-      console.log('nothas');
     }
 
     // イベント追加判定用の要素を作成
