@@ -29,11 +29,21 @@ function addQuoteButtons() {
 
     // イベント登録
     messages[i].addEventListener('mouseover', () => {
-      setTimeout(() => {  // Slackオリジナルのhoverの後にbuttonを追加するため処理を遅らせる
+      setTimeout(() => {  // Slackのhoverの後にbuttonを追加するため処理を遅らせる
         console.log('[DEBUG] mouse over' + i);
 
+        // Slackのhover前にマウスオーバーが外れたら何もしない
+        const hoverButton = messages[i].querySelector('button');
+        if (hoverButton == null) {
+          return;
+        }
+
         // 初回のhover検知のみ要素を追加
-        const hoverRoot = messages[i].querySelector('button').parentNode;
+        const hoverRoot = hoverButton.parentNode;
+        if (hoverRoot == null) {
+          console.log('hoverRoot is null');
+          return;
+        }
         if (hoverRoot.querySelector('.easyQuote') != null) {
           return;
         }
